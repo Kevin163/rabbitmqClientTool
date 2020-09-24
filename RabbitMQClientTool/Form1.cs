@@ -36,6 +36,8 @@ namespace RabbitMQClientTool
                 } else
                 {
                     _conn.Close();
+                    _conn.Dispose();
+                    _conn = null;
                     connect.Text = "connect";
                     MessageBox.Show($"disconnect successed");
                 }
